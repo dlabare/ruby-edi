@@ -1,25 +1,32 @@
 module EDI
   class Document < Blob
 
-    attr_accessor :interchanges
+    attr_accessor :errors
 
-    def initialize(options, root, parent)
+    def initialize(options = {}, parent = nil)
       super
       @options[:segment_terminator] ||= '*'
       @options[:element_terminator] ||= '~'
       @options[:sender_id]          ||= ''
       @options[:receiver_id]        ||= ''
-      @options[:date]               ||= Time.now.strftime("%y%m%d")
-      @options[:time]               ||= Time.now.strftime("%H%M")
-      @interchanges = []
+      @options[:date]               ||= Date.today
+      @options[:time]               ||= Time.now
     end
     
     def valid?
+      @errors = []
+      super
+
       # validate terminaters
-      raise MalformedDocumentError.new("\"#{@element_terminator}\" is an invalid element terminator") unless @options[:element_terminator].length == 1
-      raise MalformedDocumentError.new("\"#{@segment_terminator}\" is an invalid element terminator") unless @options[:segment_terminator].length == 1
-    
-      @interchanges.map(&:valid?).all?
+      unless @options[:element_terminator].length == 1
+        @errors << "\"#{@options[:element_terminator]}\" is an invalid element terminator"
+      end
+      
+      unless @options[:segment_terminator].length == 1
+        @errors << "\"#{@options[:segment_terminator]}\" is an invalid element terminator"
+      end
+
+      return @errors.empty?
     end
 
   end

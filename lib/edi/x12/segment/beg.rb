@@ -15,13 +15,35 @@ module EDI
       #
       class BEG < EDI::Segment
         
-        def initialize(options = {}, root, parent)
+        def initialize(options = {}, parent = nil)
           super
-          @options[:beg][1] ||= '00'
-          @options[:beg][2] ||= 'NE'
-          @options[:beg][3] ||= options[:purchse_order_number] || ''
-          @options[:beg][4] ||= options[:release_number] || ''
-          @options[:beg][5] ||= options[:purchase_order_date] || ''
+          add_child(Element.new(
+            :name    => 'Transaction Set Purpose Code', :description => 'Code identifying purpose of transaction set.',
+            :ref     => 'BEG01', :req  => 'M', :type => 'ID', :min  => 2, :max  => 2,
+            :value   => @options[:beg01] ||= @options[:purpose_code],
+            :default => '00'
+          ))
+          add_child(Element.new(
+            :name    => 'Purchase Order Type Code', :description => 'Code specifying the type of Purchase Order.',
+            :ref     => 'BEG02', :req  => 'M', :type => 'ID', :min  => 2, :max  => 2,
+            :value   => @options[:beg02] ||= @options[:type_code],
+            :default => 'NE'
+          ))
+          add_child(Element.new(
+            :name    => 'Purchase Order Number', :description => 'Purchase order number.',
+            :ref     => 'BEG03', :req  => 'M', :type => 'AN', :min  => 1, :max  => 22,
+            :value   => @options[:beg03] ||= @options[:po_number]
+          ))
+          add_child(Element.new(
+            :name    => 'Release Number', :description => 'Optional release number.',
+            :ref     => 'BEG04', :req  => 'O', :type => 'AN', :min  => 1, :max  => 7,
+            :value   => @options[:beg04] ||= @options[:po_release_number]
+          ))
+          add_child(Element.new(
+            :name    => 'Purchase Order Date', :description => 'The Date of the purchase order - CCYYMMDD.',
+            :ref     => 'BEG05', :req  => 'M', :type => 'DT', :min  => 8, :max  => 8,
+            :value   => @options[:beg05] ||= @options[:po_date]
+          ))
         end
         
       end

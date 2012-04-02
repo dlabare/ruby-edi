@@ -1,3 +1,4 @@
+require 'date'
 require 'rubygems'
 require 'ruby-debug'
 

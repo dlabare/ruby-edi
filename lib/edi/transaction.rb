@@ -1,13 +1,8 @@
 module EDI
-  class Transaction < Blob
+  class Transaction < Envelope
 
-    def initialize(options, root, parent)
-      super
-      @segments = []
-    end
-
-    def valid?
-      @segments.map(&:valid?).all?
+    def control_options
+      @options.merge(:control_number => parent.children.size + 1, :child_count => children.map(&:segment_count).inject(:+))
     end
 
   end

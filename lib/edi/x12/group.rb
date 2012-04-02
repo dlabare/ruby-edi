@@ -2,24 +2,14 @@ module EDI
   module X12
     class Group < EDI::Group
 
-      def add_transaction
-        @transactions << Transaction.new(@options.merge(:type => 'PO'), self.root, self)
-      end
-
-      def envelope
-        Envelope::GS.new(@options.merge(:transaction_count => @transactions.size), self.root, self)
+      def control_header
+        Segment::GS.new(control_options, self)
       end
       
-      def valid?
-        envelope.valid?
+      def control_trailer
+        Segment::GE.new(control_options, self)
       end
       
-      def print
-        puts envelope.header
-        @transactions.map(&:print)
-        puts envelope.trailer
-      end
-
     end
   end
 end

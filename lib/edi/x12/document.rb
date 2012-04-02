@@ -3,15 +3,11 @@ module EDI
 
     class Document < EDI::Document
       
-      def initialize(options, root = nil, parent = nil)
+      def initialize(options, parent = nil)
         super
-        @interchanges = [Interchange.new({}, self, self)]
+        add_child(Interchange.new({}, self))
       end
-      
-      def print
-        @interchanges.map(&:print)
-      end
-      
+            
     end
 
   end

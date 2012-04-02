@@ -1,5 +1,5 @@
 module EDI
-  class SubElement
+  class SubElement < Blob
     
   end
 end

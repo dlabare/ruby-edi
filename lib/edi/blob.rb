@@ -2,12 +2,43 @@ module EDI
   
   class Blob
     
-    attr_accessor :options, :root, :parent
+    attr_accessor :options, :root, :parent, :children
     
-    def initialize(options = {}, root, parent)
-      @options = options
-      @root    = root
-      @parent  = parent
+    def initialize(options = {}, parent = nil)
+      @options  = options
+      @parent   = parent
+      @children = []
+    end
+    
+    def add_child(child)
+      child.parent = self
+      @children << child
+      return child
+    end
+    
+    def root
+      p = parent
+      return p.nil? ? self : p.root
+    end
+    
+    def to_s
+      @children.map(&:to_s).join
+    end
+    
+    def print
+      puts self.to_s
+    end
+    
+    def valid?
+      @children.map(&:valid?).all?
+    end
+    
+    def method_missing(method, *args)
+      if @options.has_key?(method.to_sym)
+        return @options[method.to_sym].to_s
+      else
+        super
+      end
     end
     
   end
