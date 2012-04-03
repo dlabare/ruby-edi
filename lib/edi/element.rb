@@ -13,20 +13,47 @@ module EDI
   #
   class Element < Blob
 
-    MINIMAL_ATTRIBUTES = ['name', 'description', 'ref', 'req', 'type', 'min', 'max', 'value', 'default']
+    MINIMAL_ATTRIBUTES = ['name', 'description', 'ref', 'req', 'type', 'min', 'max', 'value', 'default', 'alternate']
 
     MINIMAL_ATTRIBUTES.each do |meth|
       define_method(meth) do
-        @options[meth.to_sym]
+        @options[meth.to_s]
       end
     end
 
+    #
+    # Note that if the value and the default are both blank it will pass the 
+    # method up the chain for cases like date, time, sender_id, that may be
+    # set on the root document
+    #
     def value_or_default
-      self.value || self.default
+      self.value || self.default || (self.send(alternate) rescue '')
     end
 
     def to_s
-      self.value_or_default.to_s
+      val = self.value_or_default
+      
+      if required?        
+        case type
+        when 'AN'
+          return val.to_s.ljust(min)
+        when 'N0'
+          return "%0#{min}d" % val.to_i
+        end
+      end
+      # end if required?
+      
+      case type
+      when 'DT'
+        return val.strftime("#{min == 8 ? '%Y' : '%y'}%m%d") if val.is_a?(Date)
+      when 'TM'
+        return val.strftime("%H%M") if val.is_a?(Time)
+      end
+      
+      return val.to_s
+    rescue Exception => e
+      debugger
+      puts hi
     end
 
     def required?

@@ -3,14 +3,13 @@ module EDI
 
     class PurchaseOrder < Document
       
-      attr_accessor :group, :transaction
+      attr_accessor :interchange, :group, :transaction
       
       def initialize(options = {}, parent = nil)
         super
         @interchange = @children.first
         @group       = @interchange.add_child(Group.new({:code => 'PO'}))
         @transaction = @group.add_child(Transaction.new({:code => 850}))
-        
         @transaction.add_child(Segment::BEG.new(:po_number => 'F100123456', :po_date => '20120402'))
         @transaction.add_child(Segment::TD5.new(:routing => 'FedEx Ground'))
         @transaction.add_child(Segment::MSG.new(:message => 'Please use our FedEx account 1216-9023-3'))

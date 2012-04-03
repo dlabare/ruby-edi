@@ -1,0 +1,777 @@
+BEG:
+  BEG01:
+      name: 'Transaction Set Purpose Code'
+      description: 'Code identifying purpose of transaction set.'
+      ref: 'BEG01'
+      req:  'M'
+      type: 'ID'
+      min: 2
+      max: 2
+      alternate: purpose_code
+      default: '00'
+  BEG02:
+      name: 'Purchase Order Type Code'
+      description: 'Code specifying the type of Purchase Order.'
+      ref: 'BEG02'
+      req: 'M'
+      type: 'ID'
+      min: 2
+      max: 2
+      alternate: type_code
+      default: 'NE'
+  BEG03:
+      name: 'Purchase Order Number'
+      description: 'Purchase order number.'
+      ref: 'BEG03'
+      req: 'M'
+      type: 'AN'
+      min: 1
+      max: 22
+      alternate: po_number
+  BEG04:
+      name: 'Release Number'
+      description: 'Optional release number.'
+      ref: 'BEG04'
+      req: 'O'
+      type: 'AN'
+      min: 1
+      max: 7
+      alternate: po_release_number
+  BEG05:
+      name: 'Purchase Order Date'
+      description: 'The Date of the purchase order - CCYYMMDD.'
+      ref: 'BEG05'
+      req: 'M'
+      type: 'DT'
+      min: 8
+      max: 8
+      alternate: po_date
+CTT:
+  CTT01:
+    name: 'Number of Line Items'
+    description: 'Total number of line items in the transaction set.'
+    ref: 'CTT01'
+    req: 'M'
+    type: 'N0'
+    min: 1
+    max: 6
+    alternate: line_item_count
+  CTT02:
+    name: 'Hash Total'
+    description: 'Sum of values of the specified data element.'
+    ref: 'CTT02'
+    req: 'O'
+    type: 'R'
+    min: 1
+    max: 10
+    alternate: hash_total
+DTM:
+FOB:
+GE:
+  GE01:
+    name: 'Number of Transaction Sets Included'
+    description: 'Total number of transaction sets included in the functional group or interchange (transmission) group terminated by the trailer containing this data element'
+    ref: 'GE01'
+    req: 'M'
+    type: 'N0'
+    min: 1
+    max: 6
+    alternate: child_count
+  GE02:
+    name: 'Group Control Number'
+    description: 'Assigned number originated and maintained by the sender.'
+    ref: 'GE02'
+    req: 'M'
+    type: 'N0'
+    min: 1
+    max: 9
+    alternate: control_number
+GS:
+  GS01:
+    name: 'Functional Group Identifier Code'
+    description: 'Code identifying a group of application related transaction sets.'
+    ref: 'GS01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: code
+    default: 00
+  GS02:
+    name: Sender ID
+    description: Application sender's ID.
+    ref: 'GS02'
+    req: 'M'
+    type: 'AN'
+    min: 2
+    max: 15
+    alternate: sender_id
+  GS03:
+    name: Receiver ID
+    description: Application receiver's ID.'
+    ref: 'GS03'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 15
+    alternate: receiver_id
+  GS04:
+    name: 'Date'
+    description: 'Expressed as CCYYMMDD'
+    ref: 'GS04'
+    req: 'M'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: date
+  GS05:
+    name: 'Time'
+    description: 'Expressed as HHMM'
+    ref: 'GS05'
+    req: 'M'
+    type: 'TM'
+    min: 4
+    max: 8
+    alternate: time
+  GS06:
+    name: 'Group Control Number'
+    description: 'Assigned number originated and maintained by the sender'
+    ref: 'GS06'
+    req: 'M'
+    type: 'N0'
+    min: 1
+    max: 9
+    alternate: control_number
+  GS07:
+    name: 'Responsible Agency Code'
+    description: 'Code identifying the issuer of the standard.'
+    ref: 'GS07'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: agency_code
+    default: X
+  GS08:
+    name: 'Version'
+    description: ''
+    ref: 'GS08'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 12
+    alternate: version
+    default: '004010'
+IEA:
+  IEA01:
+    name: 'Number of Included Functional Groups'
+    description: 'A count of the number of functional groups included in an interchange'
+    ref: 'IEA01'
+    req: 'M'
+    type: 'N0'
+    min: 1
+    max: 5
+    alternate: child_count
+  IEA02:
+    name: 'Interchange Control Number'
+    description: 'A control number assigned by the interchange sender.'
+    ref: 'IEA02'
+    req: 'O'
+    type: 'AN'
+    min: 9
+    max: 9
+    alternate: control_number
+ISA:
+  ISA01:
+    name: 'Authorization Information Qualifier'
+    description: 'Code to identify the type of information in the Authorization Information'
+    ref: 'ISA01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: authorization_information_code
+    default: '00'
+  ISA02:
+    name: 'Authorization Information'
+    description: 'Information used for additional identification or authorization of the interchange sender or the data in the interchange; the type of information is set by the Authorization Information Qualifier.'
+    ref: 'ISA02'
+    req: 'M'
+    type: 'AN'
+    min: 10
+    max: 10
+    alternate: authorization_information
+  ISA03:
+    name: 'Security Information Qualifier'
+    description: 'Code to identify the type of information in the Security Information.'
+    ref: 'ISA03'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: security_information_code
+    default: '00'
+  ISA04:
+    name: 'Security Information'
+    description: 'This is used for identifying the security information about the interchange sender or the data in the interchange; the type of information is set by the Security Information Qualifier.'
+    ref: 'ISA04'
+    req: 'M'
+    type: 'AN'
+    min: 10
+    max: 10
+    alternate: security_information
+  ISA05:
+    name: 'Interchange ID Qualifier'
+    description: 'Qualifier to designate the system/method of code structure used to designate the sender ID element being qualified.'
+    ref: 'ISA05'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: sender_id_code
+    default: '01'
+  ISA06:
+    name: 'Interchange Sender ID'
+    description: 'Identification code published by the sender for other parties to use as the receiver ID to route data to them; the sender always codes this value in the sender ID element'
+    ref: 'ISA06'
+    req: 'M'
+    type: 'AN'
+    min: 15
+    max: 15
+    alternate: sender_id
+  ISA07:
+    name: 'Interchange ID Qualifier'
+    description: 'Qualifier to designate the system/method of code structure used to designate the sender ID element being qualified.'
+    ref: 'ISA07'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: receiver_id_code
+    default: '01'
+  ISA08:
+    name: 'Interchange Receiver ID'
+    description: 'Identification code published by the receiver of the data; When sending, it is used by the sender as their sending ID, thus other parties sending to them will use this as a receiving ID to route data to them.'
+    ref: 'ISA08'
+    req: 'M'
+    type: 'AN'
+    min: 15
+    max: 15
+    alternate: receiver_id
+  ISA09:
+    name: 'Interchange Date'
+    description: 'Date of the interchange'
+    ref: 'ISA09'
+    req: 'M'
+    type: 'DT'
+    min: 6
+    max: 6
+    alternate: date
+  ISA10:
+    name: 'Interchange Time'
+    description: 'Time of the interchange.'
+    ref: 'ISA10'
+    req: 'M'
+    type: 'TM'
+    min: 4
+    max: 4
+    alternate: time
+  ISA11:
+    name: 'Interchange Control Standards Identifier'
+    description: 'Code to identify the agency responsible for the control standard used by the message that is enclosed by the interchange header and trailer.'
+    ref: 'ISA11'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: standards_id
+    default: 'U'
+  ISA12:
+    name: 'Interchange Control Version Number'
+    description: 'Code specifying the version number of the interchange control segments.'
+    ref: 'ISA12'
+    req: 'M'
+    type: 'ID'
+    min: 5
+    max: 5
+    alternate: version
+    default: '00401'
+  ISA13:
+    name: 'Interchange Control Number'
+    description: 'A control number assigned by the interchange sender.'
+    ref: 'ISA13'
+    req: 'M'
+    type: 'N0'
+    min: 9
+    max: 9
+    alternate: control_number
+  ISA14:
+    name: 'Acknowledgment Requested'
+    description: 'Code sent by the sender to request an interchange acknowledgment.'
+    ref: 'ISA14'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: ack_requested
+    default: '0'
+  ISA15:
+    name: 'Usage Indicator'
+    description: 'Code to indicate whether data enclosed by this interchange envelope is test production or information.'
+    ref: 'ISA15'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: environment
+    default: 'T'
+  ISA16:
+    name: 'Sub-element Separator'
+    description: 'The character used to separate sub-elements.'
+    ref: 'ISA16'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: sub_element_termitator
+    default: '@'
+MSG:
+  MSG01:
+    name: 'Free-Form Message Text'
+    description: 'Free-form message text.'
+    ref: 'MSG01'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 264
+    alternate: message
+N1:
+  N101:
+    name: 'Entity Identifier code'
+    description: 'Code identifying an organizational entity a physical location, property or an individual.'
+    ref: 'N101'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 3
+    alternate: code
+  N102:
+    name: 'Name'
+    description: 'Free-form name.'
+    ref: 'N102'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 60
+    alternate: name
+  N103:
+    name: 'Identification Code Qualifier'
+    description: 'Code designating the system/method of code structure used for identification code.'
+    ref: 'N103'
+    req: 'C'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: identification_code
+  N104:
+    name: 'Identification Code'
+    description: 'Code identifying a party or other code.'
+    ref: 'N104'
+    req: 'C'
+    type: 'AN'
+    min: 2
+    max: 80
+    alternate: identification
+N2:
+  N201:
+    name: 'Additional Name'
+    description: 'Additional space for longer names.'
+    ref: 'N201'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 60
+    alternate: additional_name
+  N202:
+    name: 'Additional Name'
+    description: 'Additional space for longer names.'
+    ref: 'N202'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 60
+    alternate: additional_name2
+N3:
+  N301:
+    name: 'Address Information'
+    description: 'Address information line 1.'
+    ref: 'N301'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 55
+    alternate: address1
+  N302:
+    name: 'Address Information'
+    description: 'Address information line 2.'
+    ref: 'N302'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 55
+    alternate: address2
+N4:
+  N401:
+    name: 'City Name'
+    description: 'Free form city name.'
+    ref: 'N401'
+    req: 'O'
+    type: 'AN'
+    min: 2
+    max: 30
+    alternate: city_name
+  N402:
+    name: 'State or Province Code'
+    description: 'Code (Standard State/Province) as defined by appropriate government agency.'
+    ref: 'N302'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: state_code
+  N403:
+    name: 'Postal Code'
+    description: 'Code defining international postal zone code excluding punctuation and blanks.'
+    ref: 'N303'
+    req: 'O'
+    type: 'ID'
+    min: 3
+    max: 15
+    alternate: zip_code
+  N404:
+    name: 'Country Code'
+    description: 'Code identifying the country.'
+    ref: 'N304'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 3
+    alternate: country_code
+PID:
+  PID01:
+    name: 'Item Description Type'
+    description: 'Code indicating the format of a description'
+    ref: 'PID01'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: item_description_code
+    default: 'F'
+  PID02:
+    name: 'Product/Process Characteristic Code'
+    description: ''
+    ref: 'PID02'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 3
+  PID03:
+    name: 'Agency Qualifier Code'
+    description: ''
+    ref: 'PID03'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+  PID04:
+    name: 'Product Description Code'
+    description: ''
+    ref: 'PID04'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 12
+  PID05:
+    name: 'Product Description'
+    description: 'Description of the product'
+    ref: 'PID05'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 80
+    alternate: description
+  PID06:
+    name: 'Surface/Layer/Position Code '
+    description: ''
+    ref: 'PID06'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+  PID07:
+    name: 'Source Subqualifier'
+    description: ''
+    ref: 'PID07'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 15
+  PID08:
+    name: 'Yes/No Condition or Response Code'
+    description: ''
+    ref: 'PID08'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 1
+  PID09:
+    name: 'Language Code '
+    description: 'Code identifying the language'
+    ref: 'PID09'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 3
+PO1:
+  PO101:
+    name: 'Assigned Identification'
+    description: 'Alphanumeric characters assigned for differentiation within a transaction set.'
+    ref: 'PO101'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 20
+    alternate: line_item_number
+  PO102:
+    name: 'Quantity Ordered'
+    description: 'Quantity ordered.'
+    ref: 'PO102'
+    req: 'M'
+    type: 'R'
+    min: 1
+    max: 15
+    alternate: quantity
+  PO103:
+    name: 'Unit of Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed or manner in which a measurement has been taken.'
+    ref: 'PO103'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: unit_of_measure_code
+    default: 'EA'
+  PO104:
+    name: 'Unit Price'
+    description: 'Price per unit.'
+    ref: 'PO104'
+    req: 'M'
+    type: 'R'
+    min: 1
+    max: 17
+    alternate: unit_price
+  PO105:
+    name: 'Basis of Unit Price'
+    description: 'Code identifying the type of unit price for an item.'
+    ref: 'PO105'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: unit_price_code
+    default: 'PE'
+  PO106:
+    name: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID.'
+    ref: 'PO106'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: part_number_code
+    default: 'CB'
+  PO107:
+    name: 'Product/Service ID'
+    description: 'Identifying number for a product or service.'
+    ref: 'PO107'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: part_number
+  PO108:
+    name: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID.'
+    ref: 'PO108'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: vendor_part_number_code
+    default: 'VN'
+  PO109:
+    name: 'Product/Service ID'
+    description: 'Identifying number for a product or service.'
+    ref: 'PO109'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: vendor_part_number
+  PO110:
+    name: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID.'
+    ref: 'PO10'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+  PO111:
+    name: 'Product/Service ID'
+    description: 'Identifying number for a product or service.'
+    ref: 'PO11'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+REF:
+SCH:
+  SCH01:
+    name: 'Quantity'
+    description: 'Numeric value of quantity.'
+    ref: 'SCH501'
+    req: 'M'
+    type: 'R'
+    min: 1
+    max: 15
+    alternate: quantity
+  SCH02:
+    name: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed or manner in which a measurement has been taken.'
+    ref: 'SCH502'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: unit_of_measure_code
+    default: 'EA'
+  SCH03:
+    name: 'Routing'
+    description: "Free-form description of the routing or requested routing for shipment, or the originating carrier's identity."
+    ref: 'SCH03'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 1
+  SCH04:
+    name: 'Routing'
+    description: "Free-form description of the routing or requested routing for shipment, or the originating carrier's identity."
+    ref: 'SCH04'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 1
+  SCH05:
+    name: 'Date/Time Code'
+    description: 'Code specifying type of date or time or both date and time.'
+    ref: 'SCH05'
+    req: 'M'
+    type: 'ID'
+    min: 3
+    max: 3
+    alternate: ship_date_code
+    default: '010'
+  SCH06:
+    name: 'Date'
+    description: 'Date expressed as CCYYMMDD.'
+    ref: 'SCH506'
+    req: 'M'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: ship_date
+SE:
+  SE01:
+    name: 'Number of Included Segments'
+    description: 'Total number of segments included in a transaction set including ST and SE segments.'
+    ref: 'SE01'
+    req: 'M'
+    type: 'N0'
+    min: 1
+    max: 10
+    alternate: child_count
+  SE02:
+    name: 'Transaction Set Control Number'
+    description: 'Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set.'
+    ref: 'SE02'
+    req: 'M'
+    type: 'AN'
+    min: 4
+    max: 9
+    alternate: control_number
+ST:
+  ST01:
+    name: 'Transaction Set Identifier Code'
+    description: 'Code uniquely identifying a Transaction Set.'
+    ref: 'ST01'
+    req: 'M'
+    type: 'ID'
+    min: 3
+    max: 3
+    alternate: code
+  ST02:
+    name: 'Transaction Set Control Number'
+    description: 'Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set'
+    ref: 'ST02'
+    req: 'M'
+    type: 'AN'
+    min: 4
+    max: 9
+    alternate: control_number
+TD5:
+  TD501:
+    name: 'Routing Sequence Code'
+    description: 'Code describing the relationship of a carrier to a specific shipment movement.'
+    ref: 'TD501'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: routing_sequence_code
+  TD502:
+    name: 'Identification Code Qualifier'
+    description: 'Code designating the system/method of code structure used for Identification Code'
+    ref: 'TD502'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: identification_code_qualifier
+  TD503:
+    name: 'Identification Code'
+    description: 'Code identifying a party or other code'
+    ref: 'TD503'
+    req: 'O'
+    type: 'AN'
+    min: 2
+    max: 80
+    alternate: identification_code
+  TD504:
+    name: 'Transportation Method/Type Code'
+    description: 'Code specifying the method or type of transportation for the shipment'
+    ref: 'TD504'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: transportation_method_type_code
+  TD505:
+    name: 'Routing'
+    description: "Free-form description of the routing or requested routing for shipment, or the originating carrier's identity."
+    ref: 'TD05'
+    req: 'O'
+    type: 'DT'
+    min: 1
+    max: 35
+    alternate: routing
