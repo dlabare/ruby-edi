@@ -30,7 +30,7 @@ module EDI
       self.value || self.default || (self.send(alternate) rescue '')
     end
 
-    def to_s
+    def to_string
       val = self.value_or_default
       
       if required?        
@@ -51,9 +51,6 @@ module EDI
       end
       
       return val.to_s
-    rescue Exception => e
-      debugger
-      puts hi
     end
 
     def required?

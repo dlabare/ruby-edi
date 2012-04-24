@@ -7,8 +7,7 @@ require 'active_support/core_ext/object/blank'
 require 'yaml'
 require 'ruby-debug'
 
-
-Dir["./edi/**/**"].each do |path|
+Dir["#{File.dirname(__FILE__)}/edi/**/**"].each do |path|
   require File.join(path) unless File.directory?(path)
 end
 
@@ -22,7 +21,7 @@ module EDI
     module Segment; end
     module Element; end
 
-    YAML.load_file("../config/x12/segment_defaults.yml").each_pair do |segment, elements|
+    YAML.load_file(File.expand_path(File.dirname(__FILE__) + '/../config/x12/segment_defaults.yml')).each_pair do |segment, elements|
       # setup the elements
       elements.each_pair do |element, defaults|
         self.const_get('Element').const_set(element, Class.new(EDI::Element)).class_eval(%Q(
@@ -44,7 +43,7 @@ module EDI
       ))
     end
 
-    YAML.load_file("../config/x12/loop_defaults.yml").each_pair do |loop, segments|
+    YAML.load_file(File.expand_path(File.dirname(__FILE__) + '/../config/x12/loop_defaults.yml')).each_pair do |loop, segments|
       # setup loops
       self.const_get('Loop').const_set(loop, Class.new(EDI::Loop)).class_eval(%Q(
         def initialize(options = {}, parent = nil)

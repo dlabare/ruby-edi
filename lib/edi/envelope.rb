@@ -21,14 +21,14 @@ module EDI
       control_trailer.valid?
     end
     
-    def to_s
-      control_header.to_s +
-      @children.map(&:to_s).join +
-      control_trailer.to_s
+    def to_string
+      control_header.to_string +
+      @children.map(&:to_string).join +
+      control_trailer.to_string
     end
     
     def print
-      puts self.to_s
+      puts self.to_string
     end
     
   end

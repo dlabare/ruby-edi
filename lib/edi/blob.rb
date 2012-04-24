@@ -28,13 +28,13 @@ module EDI
     def element_terminator
       '*'
     end
-    
-    def to_s
-      @children.map(&:to_s).join
+
+    def to_string
+      @children.map(&:to_string).join
     end
     
     def print
-      puts self.to_s
+      puts self.to_string
     end
     
     def valid?

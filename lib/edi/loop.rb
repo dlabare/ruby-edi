@@ -6,9 +6,9 @@ module EDI
       children.select{|child| child.segment_count unless child.blank? }.size
     end
 
-    def to_s
+    def to_string
       @children.collect do |child|
-        child.to_s unless child.blank?
+        child.to_string unless child.blank?
       end.join
     end
     
