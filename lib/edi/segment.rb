@@ -6,7 +6,7 @@ module EDI
     end
     
     def blank?
-      children.collect{|c| c.to_s == ''}.all?
+      children.collect{|c| c.to_s.blank? || (c.to_s == c.default.to_s)}.all?
     end
     
     def print

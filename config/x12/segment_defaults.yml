@@ -35,7 +35,7 @@ BEG:
       req: 'O'
       type: 'AN'
       min: 1
-      max: 7
+      max: 30
       alternate: po_release_number
   BEG05:
       name: 'Purchase Order Date'
@@ -46,6 +46,27 @@ BEG:
       min: 8
       max: 8
       alternate: po_date
+CUR:
+  CUR01:
+    name: 'Entity Identifier Code'
+    description: 'Code identifying an organizational entity, a physical location, property or an individual.'
+    ref: 'CUR01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 3
+    alternate: entity_identifier_code
+    acceptable_values: ['BY', 'SE']
+  CUR02:
+    name: 'Currency Code'
+    description: 'Code (Standard ISO) for country in whose currency the charges are specified.'
+    ref: 'CUR02'
+    req: 'M'
+    type: 'ID'
+    min: 3
+    max: 3
+    alternate: currency_code
+    acceptable_values: ['CAD', 'MXP', 'USD']
 CTT:
   CTT01:
     name: 'Number of Line Items'
@@ -176,8 +197,8 @@ IEA:
     name: 'Interchange Control Number'
     description: 'A control number assigned by the interchange sender.'
     ref: 'IEA02'
-    req: 'O'
-    type: 'AN'
+    req: 'M'
+    type: 'N0'
     min: 9
     max: 9
     alternate: control_number
@@ -457,6 +478,25 @@ N4:
     min: 2
     max: 3
     alternate: country_code
+N9:
+  N901:
+    name: 'Reference Identification Qualifier'
+    description: 'Code qualifying reference identification.'
+    ref: 'N901'
+    req: M
+    type: 'ID'
+    min: 2
+    max: 3
+    alternate: reference_identification_qualifier
+    default: LI
+  N902:
+    name: 'Reference Identification'
+    description: 'Reference information as defined for a particular transaction set or as specified by the Reference Identification Qualifier.'
+    ref: 'N902'
+    req: C
+    min: 1
+    max: 30
+    alternate: reference_identification
 PID:
   PID01:
     name: 'Item Description Type'
@@ -496,11 +536,11 @@ PID:
     name: 'Product Description'
     description: 'Description of the product'
     ref: 'PID05'
-    req: 'M'
+    req: 'C'
     type: 'AN'
     min: 1
     max: 80
-    alternate: description
+    alternate: short_description
   PID06:
     name: 'Surface/Layer/Position Code '
     description: ''
@@ -636,6 +676,23 @@ PO1:
     min: 1
     max: 48
 REF:
+  REF01:
+    name: 'Reference Identification Qualifier'
+    description: 'Code qualifying the Reference Identification'
+    ref: 'REF01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 3
+    acceptable_values: ['CO', 'DG', 'PD', 'PR', 'R1', 'SE']
+  REF02:
+    name: 'Reference Identification'
+    description: 'Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier'
+    ref: 'REF02'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 30
 SCH:
   SCH01:
     name: 'Quantity'
@@ -706,7 +763,7 @@ SE:
     description: 'Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set.'
     ref: 'SE02'
     req: 'M'
-    type: 'AN'
+    type: 'N0' #TODO: the standard says AN, but VELVAC wants zero-filled
     min: 4
     max: 9
     alternate: control_number
@@ -725,7 +782,7 @@ ST:
     description: 'Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set'
     ref: 'ST02'
     req: 'M'
-    type: 'AN'
+    type: 'N0' # TODO: the standard says AN, but VELVAC wants zero-filled
     min: 4
     max: 9
     alternate: control_number
