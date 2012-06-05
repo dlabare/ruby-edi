@@ -4,11 +4,11 @@ module EDI
     class Interchange < EDI::Interchange
             
       def control_header
-        Segment::ISA.new(control_options, self)
+        @control_header || Segment::ISA.new(control_options, self)
       end
       
       def control_trailer
-        Segment::IEA.new(control_options, self)
+        @control_trailer || Segment::IEA.new(control_options, self)
       end
 
     end

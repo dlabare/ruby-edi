@@ -3,11 +3,15 @@ module EDI
     class Transaction < EDI::Transaction
 
       def control_header
-        Segment::ST.new(control_options, self)
+        @control_header || Segment::ST.new(control_options, self)
       end
 
       def control_trailer
-        Segment::SE.new(control_options, self)
+        @control_trailer || Segment::SE.new(control_options, self)
+      end
+      
+      def acknowledgement_loops
+        children.select{|c| c.is_a?(Loop::AK2)}
       end
 
     end

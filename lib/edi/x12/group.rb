@@ -3,11 +3,11 @@ module EDI
     class Group < EDI::Group
 
       def control_header
-        Segment::GS.new(control_options, self)
+        @control_header || Segment::GS.new(control_options, self)
       end
       
       def control_trailer
-        Segment::GE.new(control_options, self)
+        @control_trailer || Segment::GE.new(control_options, self)
       end
       
     end

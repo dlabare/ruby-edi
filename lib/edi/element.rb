@@ -13,12 +13,18 @@ module EDI
   #
   class Element < Blob
 
-    MINIMAL_ATTRIBUTES = ['name', 'description', 'ref', 'req', 'type', 'min', 'max', 'value', 'default', 'alternate']
+    MINIMAL_ATTRIBUTES = ['title', 'description', 'ref', 'req', 'type', 'min', 'max', 'value', 'default', 'alternate']
 
     MINIMAL_ATTRIBUTES.each do |meth|
       define_method(meth) do
         @options[meth.to_s]
       end
+    end
+
+    def try_alternate
+      self.send(alternate.to_s)
+    rescue NoMethodError
+      return ''
     end
 
     #
@@ -27,7 +33,11 @@ module EDI
     # set on the root document
     #
     def value_or_default
-      self.value || self.default || (self.send(alternate) rescue '')
+      self.value || self.default || self.try_alternate
+    end
+    
+    def blank?
+      self.value_or_default.blank? || self.value_or_default == self.default
     end
 
     def to_string
@@ -59,8 +69,8 @@ module EDI
 
     def valid?
       super
-      root.errors << "#{self.ref} (#{self.name}) is too short: '#{self.to_s}' - length is #{self.to_s.length}, min is #{self.min}" if required? && (self.to_s.length < self.min)
-      root.errors << "#{self.ref} (#{self.name}) is too long: '#{self.to_s}' - length is #{self.to_s.length}, max is #{self.max}"  if self.to_s.length > self.max
+      root.errors << "#{self.ref} (#{self.name}) is too short: '#{self.to_string}' - length is #{self.to_string.length}, min is #{self.min}" if required? && (self.to_string.length < self.min)
+      root.errors << "#{self.ref} (#{self.name}) is too long: '#{self.to_string}' - length is #{self.to_string.length}, max is #{self.max}"  if self.to_string.length > self.max
     end
 
   end

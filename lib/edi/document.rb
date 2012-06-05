@@ -5,12 +5,16 @@ module EDI
 
     def initialize(options = {}, parent = nil)
       super
-      @options[:segment_terminator] ||= '*'
-      @options[:element_terminator] ||= '~'
+      @options[:segment_terminator] ||= '~'
+      @options[:element_terminator] ||= '*'
       @options[:sender_id]          ||= ''
       @options[:receiver_id]        ||= ''
       @options[:date]               ||= Date.today
       @options[:time]               ||= Time.now
+    end
+    
+    def interchange
+      self.children.first
     end
     
     def valid?

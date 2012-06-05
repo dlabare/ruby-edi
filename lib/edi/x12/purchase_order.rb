@@ -6,10 +6,14 @@ module EDI
       attr_accessor :interchange, :group, :transaction
       
       def initialize(options = {}, parent = nil)
+        group_options       = options.delete(:group_options) || {}
+        transaction_options = options.delete(:transaction_options) || {}
+
         super
+
         @interchange = @children.first
-        @group       = @interchange.add_child(Group.new({:code => 'PO'}))
-        @transaction = @group.add_child(Transaction.new({:code => 850}))
+        @group       = @interchange.add_child(Group.new(group_options.merge({:code => 'PO'})))
+        @transaction = @group.add_child(Transaction.new(transaction_options.merge({:code => 850})))
       end
       
     end

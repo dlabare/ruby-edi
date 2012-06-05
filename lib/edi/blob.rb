@@ -22,11 +22,11 @@ module EDI
     end
 
     def segment_terminator
-      '~'
+      root.options[:segment_terminator].to_s
     end
     
     def element_terminator
-      '*'
+      root.options[:element_terminator].to_s
     end
 
     def to_string

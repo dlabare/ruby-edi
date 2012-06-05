@@ -1,24 +1,21 @@
 module EDI
   class Envelope < Blob
     
+    attr_accessor :control_header
+    attr_accessor :control_trailer
+    
     def initialize(options = {}, parent = nil)
       super
     end
     
     def control_options
-      @options.merge(:control_number => parent.children.size + 1, :child_count => children.size)
+      @options.merge(:control_number => options[:control_number] || parent.children.size, :child_count => parent.children.size)
     end
-    
-    def control_header
-    end
-    
-    def control_trailer
-    end
-    
+        
     def valid?
       super # checks the children
-      control_header.valid?
-      control_trailer.valid?
+      control_header  && control_header.valid?
+      control_trailer && control_trailer.valid?
     end
     
     def to_string

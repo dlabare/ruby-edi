@@ -6,7 +6,7 @@ module EDI
     end
     
     def blank?
-      children.collect{|c| c.to_string.blank? || (c.to_string == c.default.to_s)}.all?
+      children.collect{|c| c.blank? }.all?
     end
     
     def to_string
