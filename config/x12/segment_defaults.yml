@@ -232,7 +232,43 @@ CTT:
     max: 10
     alternate: hash_total
 DTM:
+  DTM01:
+    title: 'Date/Time Qualifier'
+    description: 'Code specifying type of date or time, or both date and time'
+    ref: 'DTM01'
+    req: 'M'
+    type: 'ID'
+    min: 3
+    max: 3
+    alternate: datetime_qualifier
+  DTM02:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'DTM02'
+    req: 'C'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: date
+  DTM03:
+    title: 'Time'
+    description: 'Time'
+    ref: 'DTM03'
+    req: 'C'
+    type: 'TM'
+    min: 8
+    max: 8
+    alternate: time 
 FOB:
+  FOB01:
+    title: 'Shipment Method of Payment'
+    description: 'Code identifying payment terms for transportation charges'
+    ref: 'FOB01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: shipment_method_of_payment
 GE:
   GE01:
     title: 'Number of Transaction Sets Included'
@@ -969,9 +1005,784 @@ TD5:
   TD505:
     title: 'Routing'
     description: "Free-form description of the routing or requested routing for shipment, or the originating carrier's identity."
-    ref: 'TD05'
+    ref: 'TD505'
     req: 'O'
     type: 'DT'
     min: 1
     max: 35
     alternate: routing
+  TD506:
+    title: ''
+    description: ''
+    ref: 'TD506'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD507:
+    title: ''
+    description: ''
+    ref: 'TD507'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD508:
+    title: ''
+    description: ''
+    ref: 'TD508'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD509:
+    title: ''
+    description: ''
+    ref: 'TD509'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD510:
+    title: ''
+    description: ''
+    ref: 'TD510'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD511:
+    title: ''
+    description: ''
+    ref: 'TD511'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD512:
+    title: 'Service Level Code'
+    description: 'Code indicating the level of transportation service or the billing service offered by the transportation carrier'
+    ref: 'TD512'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: service_level_code
+
+# Begin specialized segments for 856 ASN
+BSN:
+  BSN01:
+    title: 'Transaction Set Purpose Code'
+    description: 'Code identifying purpose of transaction set'
+    ref: 'BSN01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: transaction_set_purpose_code
+  BSN02:
+    title: 'Shipment Identification'
+    description: 'A unique control number assigned by the original shipper to identify a specific shipment'
+    ref: 'BSN02'
+    req: 'M'
+    type: 'AN'
+    min: 2
+    max: 30
+    alternate: shipment_identification
+  BSN03:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'BSN03'
+    req: 'M'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: shipment_date
+  BSN04:
+    title: 'Time'
+    description: 'Time expressed in 24-hour clock time as follows: HHMM, or HHMMSS, or HHMMSSD, or HHMMSSDD, where H = hours (00-23), M = minutes (00-59), S = integer seconds (00-59) and DD = decimal seconds; decimal seconds are expressed as follows: D = tenths (0-9) and DD = hundredths (00-99)'
+    ref: 'BSN04'
+    req: 'M'
+    type: 'TM'
+    min: 4
+    max: 8
+    alternate: shipment_time
+  BSN05:
+    title: 'Hierarchical Structure Code'
+    description: 'Code indicating the hierarchical application structure of a transaction set that utilizes the HL segment to define the structure of the transaction set'
+    ref: 'BSN05'
+    req: 'O'
+    type: 'ID'
+    min: 4
+    max: 4
+    alternate: shipment_structure_code
+HL:
+  HL01:
+    title: 'Hierarchical ID Number'
+    description: 'A unique number assigned by the sender to identify a particular data segment in a hierarchical structure'
+    ref: 'HL01'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 12
+    alternate: heirarchical_id_number
+  HL02:
+    title: 'Hierarchical Parent ID Number'
+    description: 'Identification number of the next higher hierarchical data segment that the data segment being described is subordinate to'
+    ref: 'HL02'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 12
+    alternate: heirarchical_parent_id_number
+  HL03:
+    title: 'Hierarchical Level Code'
+    description: 'Code defining the characteristic of a level in a hierarchical'
+    ref: 'HL03'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: heirarchical_level_code
+LIN:
+  LIN01:
+    title: 'Assigned Identification'
+    description: 'Alphanumeric characters assigned for differentiation within a transaction set'
+    ref: 'LIN01'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 20
+    alternate: assigned_identification
+  LIN02:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'LIN02'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: service_id_qualifier
+  LIN03:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'LIN03'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: service_id
+  LIN04:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'LIN04'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  LIN05:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'LIN05'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  LIN06:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'LIN06'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  LIN07:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'LIN07'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  LIN08:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'LIN08'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  LIN09:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'LIN09'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  LIN10:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'LIN10'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  LIN11:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'LIN11'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  LIN12:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'LIN12'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  LIN13:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'LIN13'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+SN1:
+  SN101:
+    title: ''
+    description: ''
+    ref: 'SN101'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SN102:
+    title: 'Number of Units Shipped'
+    description: "Numeric value of units shipped in manufacturer's shipping units for a line item or transaction set"
+    ref: 'SN102'
+    req: 'M'
+    type: 'R'
+    min: 1
+    max: 10
+    alternate: units_shipped
+  SN103:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'SN103'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: unit_code
+SLN:
+  SLN01:
+    title: 'Assigned Identification'
+    description: 'Alphanumeric characters assigned for differentiation within a transaction set'
+    ref: 'SLN01'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 20
+    alternate: assigned_identification
+  SLN02:
+    title: ''
+    description: ''
+    ref: 'SLN02'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SLN03:
+    title: 'Relationship Code'
+    description: 'Code indicating the relationship between entities'
+    ref: 'SLN03'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: relationship_code
+  SLN04:
+    title: 'Quantity'
+    description: 'Numeric value of quantity'
+    ref: 'SLN04'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 15
+    alternate: 
+  SLN05:
+    title: 'Composite Unit of Measure'
+    description: 'To identify a composite unit of measure(See Figures Appendix for examples of use)'
+    ref: 'SLN05'
+    req: 'C'
+    type: 'AN'
+    min: 0
+    max: 1000
+    alternate: 
+  SLN06:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'SLN06'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN07:
+    title: ''
+    description: ''
+    ref: 'SLN07'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SLN08:
+    title: ''
+    description: ''
+    ref: 'SLN08'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SLN09:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN09'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN10:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN10'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN11:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN11'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN12:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN12'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN13:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN13'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN14:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN14'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN15:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN15'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN16:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN16'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN17:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN17'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN18:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN18'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN19:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN19'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN20:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN20'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+PRF:
+  PRF01:
+    title: 'Purchase Order Number'
+    description: 'Identifying number for Purchase Order assigned by the orderer/purchaser'
+    ref: 'PRF01'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 22
+    alternate: purchase_order_number
+  PRF02:
+    title: 'Release Number'
+    description: 'Number identifying a release against a Purchase Order previously placed by the parties involved in the transaction'
+    ref: 'PRF02'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 30
+    alternate: purchase_order_release_number
+  PRF04:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'PRF04'
+    req: 'O'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: purhcase_order_date
+PO4:
+  PO401:
+    title: 'Pack'
+    description: 'The number of inner containers, or number of eaches if there are no inner containers, per outer container'
+    ref: 'P0401'
+    req: 'O'
+    type: 'N0'
+    min: 1
+    max: 6
+    alternate: pack
+  PO402:
+    title: 'Size'
+    description: 'Size of supplier units in pack'
+    ref: 'P0402'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 8
+    alternate: size
+  PO403:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'P0403'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: measurement_code
+  PO404:
+    title: 'Inner pack'
+    description: 'The number of eaches per inner container'
+    ref: 'P0404'
+    req: 'O'
+    type: 'N0'
+    min: 1
+    max: 6
+    alternate: inner_pack
+TD1:
+  TD101:
+    title: 'Packaging Code'
+    description: 'Code identifying the type of packaging; Part 1: Packaging Form, Part 2: Packaging Material; if the Data Element is used, then Part 1 is always required'
+    ref: 'TD101'
+    req: 'O'
+    type: 'AN'
+    min: 3
+    max: 5
+    alternate: packaging_code
+  TD102:
+    title: 'Lading Quantity'
+    description: 'Number of units (pieces) of the lading commodity'
+    ref: 'TD102'
+    req: 'C'
+    type: 'N0'
+    min: 1
+    max: 7
+    alternate: lading_quantity
+  TD103:
+    title: ''
+    description: ''
+    ref: 'TD103'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD104:
+    title: ''
+    description: ''
+    ref: 'TD104'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD105:
+    title: ''
+    description: ''
+    ref: 'TD105'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD106:
+    title: 'Weight Qualifier'
+    description: 'Code defining the type of weight'
+    ref: 'TD106'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: weight_qualifier
+  TD107:
+    title: 'Weight'
+    description: 'Numeric value of weight'
+    ref: 'TD107'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 10
+    alternate: weight
+  TD108:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'TD108'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: measurement_code
+TD3:
+  TD301:
+    title: 'Equipment Description Code'
+    description: 'Code identifying type of equipment used for shipment'
+    ref: 'TD301'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: equipment_description_code
+  TD302:
+    title: 'Equipment Initial'
+    description: "Prefix or alphabetic part of an equipment unit's identifying number"
+    ref: 'TD302'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 4
+    alternate: equipment_initial
+  TD303:
+    title: 'Equipment Number'
+    description: "Sequencing or serial part of an equipment unit's identifying number (pure numeric form for equipment number is preferred)"
+    ref: 'TD303'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 10
+    alternate: equipment_number
+  TD304:
+    title: ''
+    description: ''
+    ref: 'TD304'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD305:
+    title: ''
+    description: ''
+    ref: 'TD305'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD306:
+    title: ''
+    description: ''
+    ref: 'TD306'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD307:
+    title: ''
+    description: ''
+    ref: 'TD307'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD308:
+    title: ''
+    description: ''
+    ref: 'TD308'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  TD309:
+    title: 'Seal Number'
+    description: 'Unique number on seal used to close a shipment'
+    ref: 'TD309'
+    req: 'O'
+    type: 'AN'
+    min: 2
+    max: 15
+    alternate: seal_number
+MAN:
+  MAN01:
+    title: 'Marks and Numbers Qualifier'
+    description: 'Code specifying the application or source of Marks and Numbers (87)'
+    ref: 'MAN01'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: marks_and_numbers_qualifier
+  MAN02:
+    title: 'Marks and Numbers'
+    description: 'Marks and numbers used to identify a shipment or parts of a shipment'
+    ref: 'MAN02'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: marks_and_numbers
+PAL:
+  PAL01:
+    title: 'Pallet Type Code'
+    description: 'Code indicating the type of pallet'
+    ref: 'PAL01'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+    alternate: pallet_type_code
+  PAL02:
+    title: ''
+    description: ''
+    ref: 'PAL02'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  PAL03:
+    title: ''
+    description: ''
+    ref: 'PAL03'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  PAL04:
+    title: 'Pack'
+    description: 'The number of inner containers, or number of eaches if there are no inner containers, per outer containe'
+    ref: 'PAL04'
+    req: 'O'
+    type: 'N0'
+    min: 1
+    max: 6
+    alternate: pack
+  PAL05:
+    title: ''
+    description: ''
+    ref: 'PAL05'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  PAL06:
+    title: ''
+    description: ''
+    ref: 'PAL06'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  PAL07:
+    title: 'Length'
+    description: 'Largest horizontal dimension of an object measured when the object is in the upright position'
+    ref: 'PAL07'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 8
+    alternate: length
+  PAL08:
+    title: 'Width'
+    description: 'Shorter measurement of the two horizontal dimensions measured with the object in the upright position'
+    ref: 'PAL08'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 8
+    alternate: width
+  PAL09:
+    title: 'Hegiht'
+    description: 'Vertical dimension of an object measured when the object is in the upright position'
+    ref: 'PAL09'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 8
+    alternate: height
+  PAL10:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'PAL10'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: unit_of_measurement
+    
