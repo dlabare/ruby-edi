@@ -10,8 +10,22 @@ module EDI
         @control_trailer || Segment::SE.new(control_options, self)
       end
       
+      # For 997
       def acknowledgement_loops
         children.select{|c| c.is_a?(Loop::AK2)}
+      end
+      
+      # For 856
+      def shipment_hierarchical_level_loop
+        children.select{|c| c.is_a?(Loop::HL) && c.children.first.HL03 == 'S'}.first
+      end
+      
+      def order_hierarchical_level_loop
+        children.select{|c| c.is_a?(Loop::HL) && c.children.first.HL03 == 'O'}.first
+      end
+      
+      def item_hierarchical_level_loop
+        children.select{|c| c.is_a?(Loop::HL) && c.children.first.HL03 == 'I'}.first
       end
 
     end

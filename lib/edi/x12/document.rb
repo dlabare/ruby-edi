@@ -47,12 +47,17 @@ module EDI
 
         loop_id = segment.split(element_terminator).first
         loop_children = EDI::X12.loop_defaults[loop_id]
+        last_child = nil
 
         start_idx.upto(segments.size - 1) do |i|
-          if !loop_children.include?(segments[i].to_s.split(element_terminator).first)
+          child = segments[i].to_s.split(element_terminator).first
+
+          # children need to go in order, so don't let a child repeat that is earlier in the list of children, that should signify the start of a new loop!
+          if !loop_children.include?(child) || (loop_children.index(child) < loop_children.index(last_child).to_i)
             end_idx = i - 1
             break
           end
+          last_child = child
         end
 
         return start_idx, end_idx
@@ -61,6 +66,7 @@ module EDI
       def self.recurse(segments, parent)
         segments.each_with_index do |segment, idx|
           next if segment.nil?
+          
           segment_type = detect_type(segment, parent)
           if segment_type == 'Group'
             h_idx, t_idx          = get_envelope_indexes(segments, segment, parent.element_terminator)
@@ -129,7 +135,7 @@ module EDI
 
         # build a new document
         document = self.new(:segment_terminator => segment_terminator, :element_terminator => element_terminator)
-        
+
         segments = file_contents.split(segment_terminator)
         segments.map(&:strip!)
 

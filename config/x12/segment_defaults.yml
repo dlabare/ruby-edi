@@ -1486,6 +1486,14 @@ PRF:
     min: 1
     max: 30
     alternate: purchase_order_release_number
+  PRF03:
+    title: ''
+    description: ''
+    ref: 'PRF03'
+    req: ''
+    type: ''
+    min: 
+    max: 
   PRF04:
     title: 'Date'
     description: 'Date expressed as CCYYMMDD'
