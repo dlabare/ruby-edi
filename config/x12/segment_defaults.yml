@@ -1467,6 +1467,78 @@ SLN:
     min: 1
     max: 48
     alternate: 
+  SLN21:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN21'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN22:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN22'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN23:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN23'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN24:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN24'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN25:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN25'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN26:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN26'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
+  SLN27:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'SLN27'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: 
+  SLN28:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'SLN28'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+    alternate: 
 PRF:
   PRF01:
     title: 'Purchase Order Number'
@@ -1793,4 +1865,667 @@ PAL:
     min: 2
     max: 2
     alternate: unit_of_measurement
-    
+BIG:
+  BIG01:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'BIG01'
+    req: 'M'
+    type: 'DT'
+    min: 8
+    max: 8
+  BIG02:
+    title: 'Invoice Number'
+    description: 'Identifying number assigned by issuer'
+    ref: 'BIG02'
+    req: 'M'
+    type: 'AN'
+    min: 1
+    max: 22
+  BIG03:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'BIG03'
+    req: 'O'
+    type: 'DT'
+    min: 8
+    max: 8
+  BIG04:
+    title: 'Purchase Order Number'
+    description: 'Identifying number for Purchase Order assigned by the orderer/purchaser'
+    ref: 'BIG04'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 22
+  BIG05:
+    title: ''
+    description: ''
+    ref: 'BIG05'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  BIG06:
+    title: ''
+    description: ''
+    ref: 'BIG06'
+    req: ''
+    type: ''
+    min: 
+    max:
+  BIG07:
+    title: 'Transaction Type Code'
+    description: 'Code specifying the type of transaction'
+    ref: 'BIG07'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+ITD:
+  ITD01:
+    title: 'Terms Type Code'
+    description: 'Code identifying type of payment terms'
+    ref: 'IDT01'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+  ITD02:
+    title: 'Terms Basis Date Code'
+    description: 'Code identifying the beginning of the terms period'
+    ref: 'IDT02'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+  ITD03:
+    title: 'Terms Discount Percent'
+    description: 'Terms discount percentage, expressed as a percent, available to the purchaser if an invoice is paid on or before the Terms Discount Due Date. Include decimal point if not a whole number.'
+    ref: 'IDT03'
+    req: 'O'
+    type: 'R'
+    min: 1
+    max: 6
+  ITD04:
+    title: 'Terms Discount Due Date'
+    description: 'Date payment is due if discount is to be earned expressed in format CCYYMMDD'
+    ref: 'IDT04'
+    req: 'C'
+    type: 'DT'
+    min: 8
+    max: 8
+  ITD05:
+    title: ''
+    description: ''
+    ref: 'IDT05'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  ITD06:
+    title: 'Terms Net Due Date'
+    description: 'Date when total invoice amount becomes due expressed in format CCYYMMDD'
+    ref: 'IDT06'
+    req: 'O'
+    type: 'DT'
+    min: 8
+    max: 8
+  ITD07:
+    title: ''
+    description: ''
+    ref: ''
+    req: 'IDT07'
+    type: ''
+    min: 
+    max: 
+  ITD08:
+    title: 'Terms Discount Amount'
+    description: 'Total amount of terms discount. The decimal point is assumed and should not be included in the amount.'
+    ref: 'IDT08'
+    req: 'O'
+    type: 'N2'
+    min: 1
+    max: 10
+  ITD09:
+    title: ''
+    description: ''
+    ref: 'IDT09'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  ITD10:
+    title: ''
+    description: ''
+    ref: 'IDT10'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  ITD11:
+    title: ''
+    description: ''
+    ref: 'IDT11'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  ITD12:
+    title: 'Description'
+    description: 'A free-form description to clarify the related data elements and their content'
+    ref: 'IDT08'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 80
+IT1:
+  IT101:
+    title: 'Assigned Identification'
+    description: 'Alphanumeric characters assigned for differentiation within a transaction set'
+    ref: 'IT101'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 20
+  IT102:
+    title: 'Quantity Invoiced'
+    description: 'Number of units invoiced'
+    ref: 'IT102'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 10
+  IT103:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'IT103'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT104:
+    title: 'Unit Price'
+    description: 'Price per unit of product, service, commodity, etc.'
+    ref: 'IT104'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 17
+  IT105:
+    title: 'Basis of Unit Price Code'
+    description: 'Code identifying the type of unit price for an item'
+    ref: 'IT105'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT106:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
+    ref: 'IT106'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT107:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT107'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT108:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT108'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT109:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT109'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT110:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT110'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT111:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT11'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT112:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT112'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT113:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT113'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT114:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT114'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT115:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT115'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT116:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT116'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT117:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT117'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT118:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT118'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT119:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT119'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT120:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT120'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT121:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT121'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT122:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT122'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT123:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT123'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  IT124:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
+    ref: 'IT124'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  IT125:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'IT125'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+CTP:
+  CTP01:
+    title: ''
+    description: ''
+    ref: 'CTP01'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CTP02:
+    title: ''
+    description: ''
+    ref: 'CTP02'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CTP03:
+    title: ''
+    description: ''
+    ref: 'CTP03'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CTP04:
+    title: ''
+    description: ''
+    ref: 'CTP04'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CTP05:
+    title: ''
+    description: ''
+    ref: 'CTP05'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CTP06:
+    title: 'Price Multiplier Qualifier'
+    description: 'Code indicating the type of price multiplier'
+    ref: 'CTP06'
+    req: 'O'
+    type: 'ID'
+    min: 3
+    max: 3
+  CTP07:
+    title: 'Multiplier'
+    description: ''
+    ref: 'CTP07'
+    req: 'O'
+    type: 'R'
+    min: 1
+    max: 10
+SAC:
+  SAC01:
+    title: 'Allowance or Charge Indicator'
+    description: 'Code which indicates an allowance or charge for the service specified'
+    ref: 'SCA01'
+    req: 'M'
+    type: 'ID'
+    min: 1
+    max: 1
+  SAC02:
+    title: 'Service, Promotion, Allowance, or Charge Code'
+    description: 'Code identifying the service, promotion, allowance, or charge'
+    ref: 'SCA02'
+    req: 'C'
+    type: 'ID'
+    min: 4
+    max: 4
+  SAC03:
+    title: ''
+    description: ''
+    ref: 'SAC03'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC04:
+    title: ''
+    description: ''
+    ref: 'SAC04'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC05:
+    title: 'Amount'
+    description: 'Monetary Amount'
+    ref: 'SAC05'
+    req: 'O'
+    type: 'N2'
+    min: 1
+    max: 15
+  SAC06:
+    title: ''
+    description: ''
+    ref: 'SAC06'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC07:
+    title: ''
+    description: ''
+    ref: 'SAC07'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC08:
+    title: ''
+    description: ''
+    ref: 'SAC08'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC09:
+    title: ''
+    description: ''
+    ref: 'SAC09'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC10:
+    title: ''
+    description: ''
+    ref: 'SAC10'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC11:
+    title: ''
+    description: ''
+    ref: 'SAC11'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC12:
+    title: 'Allowance or Charge Method of Handling Code'
+    description: 'Code indicating method of handling for an allowance or charge'
+    ref: 'SAC12'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 2
+  SAC13:
+    title: ''
+    description: ''
+    ref: 'SAC13'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC14:
+    title: ''
+    description: ''
+    ref: 'SAC14'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  SAC15:
+    title: 'Description'
+    description: 'A free-form description to clarify the related data elements and their content'
+    ref: 'SAC15'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 80
+TDS:
+  TDS01:
+    title: 'Total Invoice Amount'
+    description: 'Monetary amount'
+    ref: 'TDS01'
+    req: 'M'
+    type: 'N2'
+    min: 1
+    max: 15
+  TDS02:
+    title: 'Total Amount Subject to Discount'
+    description: 'Monetary amount'
+    ref: 'TDS02'
+    req: 'O'
+    type: 'N2'
+    min: 1
+    max: 15
+  TDS03:
+    title: 'Discounted Amount Due'
+    description: 'Monetary amount'
+    ref: 'TDS03'
+    req: 'O'
+    type: 'N2'
+    min: 1
+    max: 15
+  TDS04:
+    title: 'Terms Discount Amount'
+    description: 'Monetary amount'
+    ref: 'TDS04'
+    req: 'O'
+    type: 'N2'
+    min: 1
+    max: 15
+TXI:
+  TXI01:
+    title: 'Tax Type Code'
+    description: 'Code specifying the type of tax'
+    ref: 'TXI01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+  TXI02:
+    title: 'Monetary Amount'
+    description: 'Monetary Amount'
+    ref: 'TXI02'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 18
+  TXI03:
+    title: 'Percent'
+    description: 'Percentage expressed as a decimal'
+    ref: 'TXI03'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 10
+CAD:
+  CAD01:
+    title: 'Transportation Method/Type Code'
+    description: 'Code specifying the method or type of transportation for the shipment'
+    ref: 'CAD01'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 2
+  CAD02:
+    title: 'Equipment Initial'
+    description: "Prefix or alphabetic part of an equipment unit's identifying number"
+    ref: 'CAD02'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 4
+  CAD03:
+    title: 'Equipment Number'
+    description: "Sequencing or serial part of an equipment unit's identifying number (pure numeric form for equipment number is preferred)"
+    ref: 'CAD03'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 10
+  CAD04:
+    title: 'Standard Carrier Alpha Code'
+    description: 'Standard Carrier Alpha Code'
+    ref: 'CAD04'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 4
+  CAD05:
+    title: 'Routing'
+    description: "Free-form description of the routing or requested routing for shipment, or the originating carrier's identity"
+    ref: 'CAD05'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 35
+  CAD06:
+    title: ''
+    description: ''
+    ref: 'CAD06'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CAD07:
+    title: ''
+    description: ''
+    ref: 'CAD07'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CAD08:
+    title: ''
+    description: ''
+    ref: 'CAD08'
+    req: ''
+    type: ''
+    min: 
+    max: 
+  CAD09:
+    title: 'Service Level Code'
+    description: 'Code indicating the level of transportation service or the billing service offered by the transportation carrier'
+    ref: 'CAD09'
+    req: ''
+    type: ''
+    min: 
+    max: 

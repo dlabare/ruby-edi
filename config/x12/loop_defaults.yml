@@ -36,3 +36,14 @@ HL:
   - DTM
   - FOB
   - PAL
+IT1:
+  - IT1
+  - CTP
+PID:
+  - PID
+  - REF
+SAC:
+  - SAC
+SLN:
+  - SLN
+  - PID
