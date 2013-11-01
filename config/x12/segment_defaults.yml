@@ -202,8 +202,8 @@ CUR:
     max: 3
     alternate: entity_identifier_code
     acceptable_values:
-      BY:
-      SE:
+      BY: Buying Party (Purchaser)
+      SE: Selling Party
   CUR02:
     title: 'Currency Code'
     description: 'Code (Standard ISO) for country in whose currency the charges are specified.'
@@ -214,9 +214,9 @@ CUR:
     max: 3
     alternate: currency_code
     acceptable_values: 
-      CAD:
-      MXP:
-      USD:
+      CAD: Canadian Dollar
+      MXP: Mexican Peso
+      USD: U.S. Dollar
 CTT:
   CTT01:
     title: 'Number of Line Items'
@@ -562,6 +562,14 @@ N1:
     min: 2
     max: 3
     alternate: code
+    acceptable_values:
+      BS: Bill and Ship To
+      BT: Bill-to-Party
+      BY: Buying Party (Purchaser)
+      EN: End User
+      RE: Party to receive commercial invoice remittance
+      SE: Selling Party
+      ST: Ship To
   N102:
     title: 'Name'
     description: 'Free-form name.'
