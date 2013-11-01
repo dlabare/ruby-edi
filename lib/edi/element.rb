@@ -43,7 +43,7 @@ module EDI
     def to_string
       val = self.value_or_default
       
-      if required?        
+      if required?
         case type
         when 'AN'
           return val.to_s.ljust(min)
@@ -61,6 +61,30 @@ module EDI
       end
       
       return val.to_s
+    end
+    
+    def to_human_readable_string
+      return '' if value.blank?
+      
+      val = value
+      
+      if type == 'N2'
+        # Implied decimal, let's normalize it
+        val = ("%0.2f" % (val.to_f / 100)) if type == 'N2'
+      end
+      
+      str = "#{title}: #{val}"
+      
+      # If there's a description for the ID, let's list that too
+      if type == 'ID'
+        begin
+          code_desc = acceptable_values[value]
+          str += " (#{code_desc})" unless code_desc.blank?
+        rescue NoMethodError
+        end
+      end
+      
+      return "#{str}\n"
     end
 
     def required?

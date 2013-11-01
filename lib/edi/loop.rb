@@ -12,6 +12,12 @@ module EDI
       end.join
     end
     
+    def to_human_readable_string
+      @children.collect do |child|
+        child.to_human_readable_string unless child.blank?
+      end.join
+    end
+    
   end
 
 end

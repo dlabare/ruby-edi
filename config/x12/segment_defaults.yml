@@ -201,7 +201,9 @@ CUR:
     min: 2
     max: 3
     alternate: entity_identifier_code
-    acceptable_values: ['BY', 'SE']
+    acceptable_values:
+      BY:
+      SE:
   CUR02:
     title: 'Currency Code'
     description: 'Code (Standard ISO) for country in whose currency the charges are specified.'
@@ -211,7 +213,10 @@ CUR:
     min: 3
     max: 3
     alternate: currency_code
-    acceptable_values: ['CAD', 'MXP', 'USD']
+    acceptable_values: 
+      CAD:
+      MXP:
+      USD:
 CTT:
   CTT01:
     title: 'Number of Line Items'
@@ -689,6 +694,8 @@ PID:
     max: 1
     alternate: item_description_code
     default: 'F'
+    acceptable_values:
+      F: Free-form
   PID02:
     title: 'Product/Process Characteristic Code'
     description: ''
@@ -863,7 +870,14 @@ REF:
     type: 'ID'
     min: 2
     max: 3
-    acceptable_values: ['CO', 'DG', 'PD', 'PR', 'R1', 'SE']
+    acceptable_values: 
+      CO:
+      DG: Drawing Number
+      LT: Lot Number
+      PD: Promotion/Deal Number
+      PR: Price Quote Number
+      R1: Current Revision Number
+      SE: Serial Number
   REF02:
     title: 'Reference Identification'
     description: 'Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier'
@@ -1316,6 +1330,8 @@ SLN:
     min: 1
     max: 1
     alternate: relationship_code
+    acceptable_values:
+      I: Included
   SLN04:
     title: 'Quantity'
     description: 'Numeric value of quantity'
@@ -2044,6 +2060,26 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BG: Bag
+      BK: Book
+      CA: Case
+      CG: Card
+      CT: Carton
+      EA: Each
+      FT: Foot
+      HU: Hundred
+      KG: Kilogram
+      LB: Pound
+      MR: Meter
+      PC: Piece
+      PK: Package
+      RD: Rod (length) - 5.5 Yards
+      RE: Reel
+      RL: Roll
+      SH: Sheet
+      SO: Spool
+      TH: Thousand
   IT104:
     title: 'Unit Price'
     description: 'Price per unit of product, service, commodity, etc.'
@@ -2060,6 +2096,15 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      HF: Per 100 Feet
+      HP: Price per Hundred
+      PE: Price per Each
+      PF: Price Per Foot
+      PP: Price per Pound
+      TF: Per 1000 Feet
+      TP: Price per Thousand
+      UM: Price per Unit of Measure
   IT106:
     title: 'Product/Service ID Qualifier'
     description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
@@ -2068,6 +2113,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT107:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2084,6 +2141,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT109:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2100,6 +2169,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT111:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2116,6 +2197,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT113:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2132,6 +2225,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT115:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2148,6 +2253,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT117:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2164,6 +2281,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT119:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2180,6 +2309,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT121:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2196,6 +2337,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT123:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2212,6 +2365,18 @@ IT1:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      BP: Buyer's Part Number
+      CB: Buyer's Catalog Number
+      CH: Country of Origin Code
+      EN: European Article Number
+      HD: International Harmonized Commodity Code
+      U2: U.P.C. Shipping Container Code
+      UD: U.P.C./EAN Consumer Package Code
+      UI: U.P.C. Consumer Package Code
+      UK: U.P.C./EAN Shipping Container Code
+      VC: Vendor's (Seller's) Catalog Number
+      VP: Vendor's (Seller's) Part Number
   IT125:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2269,6 +2434,9 @@ CTP:
     type: 'ID'
     min: 3
     max: 3
+    acceptable_values:
+      DIS: Discount Multiplier
+      SEL: Selling Multiplier
   CTP07:
     title: 'Multiplier'
     description: ''
@@ -2286,6 +2454,9 @@ SAC:
     type: 'ID'
     min: 1
     max: 1
+    acceptable_values:
+      A: Allowance
+      C: Charge
   SAC02:
     title: 'Service, Promotion, Allowance, or Charge Code'
     description: 'Code identifying the service, promotion, allowance, or charge'
@@ -2294,6 +2465,13 @@ SAC:
     type: 'ID'
     min: 4
     max: 4
+    acceptable_values:
+      A010: Absolute Minimum Charge
+      D240: Freight
+      D500: Handling
+      F050: Other (See related description)
+      B750: Core Charge
+      C300: Special Discount
   SAC03:
     title: ''
     description: ''
@@ -2374,6 +2552,10 @@ SAC:
     type: 'ID'
     min: 2
     max: 2
+    acceptable_values:
+      05: Charge to be Paid by Vendor
+      06: Charge to be Paid by Customer
+      09: Allowance To Be Issued by Vendor
   SAC13:
     title: ''
     description: ''

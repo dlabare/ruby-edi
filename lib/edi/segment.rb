@@ -13,6 +13,10 @@ module EDI
       ([self.class.name.split('::').last] + children.map(&:to_string)).join(root.element_terminator) + root.segment_terminator + "\n"
     end
     
+    def to_human_readable_string
+      children.map(&:to_human_readable_string).append("-------------\n")
+    end
+    
     def print
       puts self.to_string
     end

@@ -37,6 +37,10 @@ module EDI
       puts self.to_string
     end
     
+    def to_human_readable_string
+      @children.map(&:to_human_readable_string).join
+    end
+    
     def valid?
       @children.map(&:valid?).all?
     end

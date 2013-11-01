@@ -24,6 +24,10 @@ module EDI
       control_trailer.to_string
     end
     
+    def to_human_readable_string
+      @children.map(&:to_human_readable_string).join
+    end
+    
     def print
       puts self.to_string
     end
