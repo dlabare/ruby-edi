@@ -8,6 +8,15 @@ module EDI
         add_child(Interchange.new(options, self))
       end
       
+      def groups_for(blob)
+        return blob if blob.is_a?(EDI::Group)
+        return blob.children.collect {|c| groups_for(c) }.flatten
+      end
+      
+      def groups
+        return self.groups_for(self)
+      end
+      
       def transactions_for(blob)
         return blob if blob.is_a?(EDI::Transaction)
         return blob.children.collect {|c| transactions_for(c) }.flatten

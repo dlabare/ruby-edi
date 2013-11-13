@@ -11,7 +11,12 @@ module EDI
     def control_options
       @options.merge(:control_number => options[:control_number] || parent.children.size, :child_count => parent.children.size)
     end
-        
+    
+    # +2 because it includes the control_header and control_trailer segments
+    def segment_count
+      children.map(&:segment_count).inject(:+).to_i + 2
+    end
+
     def valid?
       super # checks the children
       control_header  && control_header.valid?
