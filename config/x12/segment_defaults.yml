@@ -2726,3 +2726,69 @@ CAD:
     type: ''
     min: 
     max: 
+PER:
+  PER01:
+    title: 'Contact Function Code'
+    description: 'Code identifying the major duty or responsibility of the person or group named'
+    ref: 'PER01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+  PER02:
+    title: 'Name'
+    description: 'Name'
+    ref: 'PER02'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 60
+  PER03:
+    title: 'Communication Number Qualifier'
+    description: 'Code identifying the type of communication number.'
+    ref: 'PER03'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  PER04:
+    title: 'Communication Number'
+    description: 'Complete communications number including country or area code when applicable.'
+    ref: 'PER04'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 80
+  PER05:
+    title: 'Communication Number Qualifier'
+    description: 'Code identifying the type of communication number.'
+    ref: 'PER05'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  PER06:
+    title: 'Communication Number'
+    description: 'Complete communications number including country or area code when applicable.'
+    ref: 'PER06'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 80
+  PER07:
+    title: 'Communication Number Qualifier'
+    description: 'Code identifying the type of communication number.'
+    ref: 'PER07'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  PER08:
+    title: 'Communication Number'
+    description: 'Complete communications number including country or area code when applicable.'
+    ref: 'PER08'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 80
+    
