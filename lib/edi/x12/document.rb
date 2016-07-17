@@ -137,11 +137,11 @@ module EDI
 
       def self.parse(doc)
         if doc.is_a?(File)      # passed in a File
-          file_contents = Iconv.iconv('UTF-8//IGNORE', 'UTF-8', File.open(doc.path, 'r').read.strip)
+          file_contents = File.open(doc.path, 'r').read.strip
         elsif File.exists?(doc) # passed in a path to a File
-          file_contents = Iconv.iconv('UTF-8//IGNORE', 'UTF-8', File.open(doc, 'r').read.strip)
+          file_contents = File.open(doc, 'r').read.strip
         else                    # passed in the raw edi
-          file_contents = Iconv.iconv('UTF-8//IGNORE', 'UTF-8', doc.strip)
+          file_contents = doc.strip
         end
 
         segment_terminator = file_contents[105].chr
