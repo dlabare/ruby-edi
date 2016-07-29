@@ -24,8 +24,12 @@ module EDI
         children.select{|c| c.is_a?(Loop::HL) && c.children.first.HL03 == 'O'}.first
       end
       
+      def item_hierarchical_level_loops
+        children.select{|c| c.is_a?(Loop::HL) && c.children.first.HL03 == 'I'}
+      end
+      
       def item_hierarchical_level_loop
-        children.select{|c| c.is_a?(Loop::HL) && c.children.first.HL03 == 'I'}.first
+        item_hierarchical_level_loops.first
       end
 
     end
