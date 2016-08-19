@@ -93,8 +93,8 @@ module EDI
 
     def valid?
       super
-      root.errors << "#{self.ref} (#{self.name}) is too short: '#{self.to_string}' - length is #{self.to_string.length}, min is #{self.min}" if required? && (self.to_string.length < self.min.to_i)
-      root.errors << "#{self.ref} (#{self.name}) is too long: '#{self.to_string}' - length is #{self.to_string.length}, max is #{self.max}"  if self.to_string.length > self.max.to_i
+      root.errors << "#{self.ref} (#{self.ref}) is too short: '#{self.to_string}' - length is #{self.to_string.length}, min is #{self.min}" if required? && (self.to_string.length < self.min.to_i)
+      root.errors << "#{self.ref} (#{self.ref}) is too long: '#{self.to_string}' - length is #{self.to_string.length}, max is #{self.max}"  if self.to_string.length > self.max.to_i
     end
 
   end
