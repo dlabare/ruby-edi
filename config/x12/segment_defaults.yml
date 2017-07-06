@@ -150,6 +150,63 @@ AK9:
     min: 1
     max: 3
     alternate: error_code
+BAK:
+  BAK01:
+    title: 'Transaction Set Purpose Code'
+    description: 'Code identifying purpose of transaction set'
+    ref: 'BAK01'
+    req:  'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: purpose_code
+    default: '00'
+  BAK02:
+    title: 'Acknowledgment Type'
+    description: 'Code specifying the type of acknowledgment'
+    ref: 'BAK02'
+    req:  'M'
+    type: 'ID'
+    min: 2
+    max: 2
+    alternate: acknowlegment_type
+    default: 'AD'
+  BAK03:
+    title: 'Purchase Order Number'
+    description: 'Identifying number for Purchase Order assigned by the orderer/purchaser'
+    ref: 'BAK03'
+    req:  'M'
+    type: 'AN'
+    min: 1
+    max: 22
+    alternate: purchase_order_number
+  BAK04:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'BAK04'
+    req:  'M'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: purchase_order_date
+  BAK08:
+    title: 'Reference Identification'
+    description: 'Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier'
+    ref: 'BAK08'
+    req:  'O'
+    type: 'AN'
+    min: 1
+    max: 30
+    alternate: reference_identification
+  BAK09:
+    title: 'Date'
+    description: 'Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier'
+    ref: 'BAK09'
+    req:  'O'
+    type: 'DT'
+    min: 8
+    max: 8
+    alternate: reference_identification_date
 BEG:
   BEG01:
       title: 'Transaction Set Purpose Code'
