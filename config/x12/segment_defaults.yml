@@ -2848,4 +2848,188 @@ PER:
     type: 'AN'
     min: 1
     max: 80
-    
+ACK:
+  ACK01:
+    title: 'Line Item Status Code'
+    description: 'Code specifying the action taken by the seller on a line item requested by the buyer'
+    ref: 'ACK01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK04:
+    title: 'Date/Time Qualifier'
+    description: 'Code specifying type of date or time, or both date and time'
+    ref: 'ACK04'
+    req: 'O'
+    type: 'ID'
+    min: 3
+    max: 3
+  ACK05:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'ACK05'
+    req: 'C'
+    type: 'DT'
+    min: 8
+    max: 8
+  ACK07:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK07'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK08:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK08'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK09:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK09'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK10:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK10'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK11:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK11'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK12:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK12'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK13:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK13'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK14:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK14'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK15:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK15'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK16:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK16'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK17:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK17'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK18:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK18'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK19:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK19'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK20:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK20'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK21:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK21'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK22:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK22'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK23:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK23'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK24:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK24'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
+  ACK25:
+    title: 'Product/Service ID Qualifier'
+    description: 'Code identifying the type/source of the descriptive number used in Product/Service ID (234)'
+    ref: 'ACK25'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ACK26:
+    title: 'Product/Service ID'
+    description: 'Identifying number for a product or service'
+    ref: 'ACK26'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 48
