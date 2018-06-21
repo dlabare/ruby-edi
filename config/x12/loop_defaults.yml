@@ -36,6 +36,7 @@ HL:
   - DTM
   - FOB
   - PAL
+  - MEA
 IT1:
   - IT1
   - CTP
@@ -47,3 +48,6 @@ SAC:
 SLN:
   - SLN
   - PID
+ACK:
+  - ACK
+  - MAN
