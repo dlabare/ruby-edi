@@ -62,7 +62,7 @@ module EDI
           child = segments[i].to_s.split(element_terminator).first
 
           # children need to go in order, so don't let a child repeat that is earlier in the list of children, that should signify the start of a new loop!
-          if !loop_children.include?(child) || (loop_children.index(child) < loop_children.index(last_child).to_i)
+          if !loop_children.include?(child) || (loop_children.index(child) < loop_children.index(last_child).to_i) || child == last_child
             end_idx = i - 1
             break
           end
