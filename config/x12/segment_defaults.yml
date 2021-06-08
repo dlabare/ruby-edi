@@ -3068,4 +3068,60 @@ which a measurement has been taken'
     type: 'ID'
     min: 2
     max: 2
-
+ZA:
+  ZA01:
+    title: 'Activity Code'
+    description: 'Code identifying activity details for the product being reported'
+    ref: 'ZA01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+  ZA02:
+    title: 'Quantity'
+    description: 'Numeric value of quantity'
+    ref: 'ZA02'
+    req: 'C'
+    type: 'R'
+    min: 1
+    max: 15
+  ZA03:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
+    ref: 'ZA03'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 2
+  ZA04:
+    title: 'Date/Time Qualifier'
+    description: 'Code specifying type of date or time, or both date and time'
+    ref: 'ZA04'
+    req: 'C'
+    type: 'ID'
+    min: 3
+    max: 3
+  ZA05:
+    title: 'Date'
+    description: 'Date expressed as CCYYMMDD'
+    ref: 'ZA05'
+    req: 'C'
+    type: 'DT'
+    min: 8
+    max: 8
+  ZA06:
+    title: 'Reference Identification Qualifier'
+    description: 'Code qualifying the Reference Identification'
+    ref: 'ZA06'
+    req: 'C'
+    type: 'ID'
+    min: 2
+    max: 3
+  ZA07:
+    title: 'Reference Identification'
+    description: 'Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier'
+    ref: 'ZA07'
+    req: 'C'
+    type: 'AN'
+    min: 1
+    max: 30

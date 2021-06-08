@@ -51,5 +51,9 @@ ACK:
   - ACK
   - MAN
 LIN:
+  - LIN
   - QTY
+  - CTP
+ZA:
   - ZA
+  - QTY
