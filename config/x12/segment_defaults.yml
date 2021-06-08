@@ -3033,3 +3033,39 @@ ACK:
     type: 'AN'
     min: 1
     max: 48
+QTY:
+  QTY01:
+    title: 'Quantity Qualifier'
+    description: 'Code specifying the type of quantity'
+    ref: 'QTY01'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+  QTY02:
+    title: 'Quantity'
+    description: 'Numeric value of quantity'
+    ref: 'QTY02'
+    req: 'X'
+    type: 'R'
+    min: 1
+    max: 15
+  QTY03:
+    title: 'Composite Unit of Measure'
+    description: ' To identify a composite unit of measure(See Figures Appendix for examples
+of use)'
+    ref: 'QTY03'
+    req: 'O'
+    type: 'Comp'
+    min: 1
+    max: 4
+  QTY04:
+    title: 'Unit or Basis for Measurement Code'
+    description: 'Code specifying the units in which a value is being expressed, or manner in
+which a measurement has been taken'
+    ref: 'QTY04'
+    req: 'M'
+    type: 'ID'
+    min: 2
+    max: 2
+

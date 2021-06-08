@@ -50,3 +50,6 @@ SLN:
 ACK:
   - ACK
   - MAN
+LIN:
+  - QTY
+  - ZA
