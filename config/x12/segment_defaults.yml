@@ -1051,6 +1051,52 @@ ST:
     min: 4
     max: 9
     alternate: control_number
+TD4:
+  TD401:
+    title: 'Special Handling Code'
+    description: ''
+    ref: 'TD401'
+    req: 'O'
+    type: 'ID'
+    min: 2
+    max: 3
+    alternate: special_handling_code
+  TD402:
+    title: 'Hazardous Material Code Qualifier'
+    description: ''
+    ref: 'TD402'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: hazardous_material_code_qualifier
+  TD403:
+    title: 'Hazardous Material Class Code'
+    description: ''
+    ref: 'TD403'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 4
+    alternate: hazardous_material_class_code
+  TD404:
+    title: 'Description'
+    description: ''
+    ref: 'TD404'
+    req: 'O'
+    type: 'AN'
+    min: 1
+    max: 80
+    alternate: special_handling_description
+  TD405:
+    title: 'Yes/No Condition or Response Code'
+    description: ''
+    ref: 'TD405'
+    req: 'O'
+    type: 'ID'
+    min: 1
+    max: 1
+    alternate: yes_no_conditional
 TD5:
   TD501:
     title: 'Routing Sequence Code'
