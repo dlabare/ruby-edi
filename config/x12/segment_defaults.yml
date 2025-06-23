@@ -2060,7 +2060,7 @@ ITD:
   ITD01:
     title: 'Terms Type Code'
     description: 'Code identifying type of payment terms'
-    ref: 'IDT01'
+    ref: 'ITD01'
     req: 'O'
     type: 'ID'
     min: 2
@@ -2068,7 +2068,7 @@ ITD:
   ITD02:
     title: 'Terms Basis Date Code'
     description: 'Code identifying the beginning of the terms period'
-    ref: 'IDT02'
+    ref: 'ITD02'
     req: 'O'
     type: 'ID'
     min: 1
@@ -2076,7 +2076,7 @@ ITD:
   ITD03:
     title: 'Terms Discount Percent'
     description: 'Terms discount percentage, expressed as a percent, available to the purchaser if an invoice is paid on or before the Terms Discount Due Date. Include decimal point if not a whole number.'
-    ref: 'IDT03'
+    ref: 'ITD03'
     req: 'O'
     type: 'R'
     min: 1
@@ -2084,7 +2084,7 @@ ITD:
   ITD04:
     title: 'Terms Discount Due Date'
     description: 'Date payment is due if discount is to be earned expressed in format CCYYMMDD'
-    ref: 'IDT04'
+    ref: 'ITD04'
     req: 'C'
     type: 'DT'
     min: 8
@@ -2092,7 +2092,7 @@ ITD:
   ITD05:
     title: ''
     description: ''
-    ref: 'IDT05'
+    ref: 'ITD05'
     req: ''
     type: ''
     min: 
@@ -2100,7 +2100,7 @@ ITD:
   ITD06:
     title: 'Terms Net Due Date'
     description: 'Date when total invoice amount becomes due expressed in format CCYYMMDD'
-    ref: 'IDT06'
+    ref: 'ITD06'
     req: 'O'
     type: 'DT'
     min: 8
@@ -2109,14 +2109,14 @@ ITD:
     title: ''
     description: ''
     ref: ''
-    req: 'IDT07'
+    req: 'ITD07'
     type: ''
     min: 
     max: 
   ITD08:
     title: 'Terms Discount Amount'
     description: 'Total amount of terms discount. The decimal point is assumed and should not be included in the amount.'
-    ref: 'IDT08'
+    ref: 'ITD08'
     req: 'O'
     type: 'N2'
     min: 1
@@ -2124,7 +2124,7 @@ ITD:
   ITD09:
     title: ''
     description: ''
-    ref: 'IDT09'
+    ref: 'ITD09'
     req: ''
     type: ''
     min: 
@@ -2132,7 +2132,7 @@ ITD:
   ITD10:
     title: ''
     description: ''
-    ref: 'IDT10'
+    ref: 'ITD10'
     req: ''
     type: ''
     min: 
@@ -2140,7 +2140,7 @@ ITD:
   ITD11:
     title: ''
     description: ''
-    ref: 'IDT11'
+    ref: 'ITD11'
     req: ''
     type: ''
     min: 
@@ -2148,7 +2148,7 @@ ITD:
   ITD12:
     title: 'Description'
     description: 'A free-form description to clarify the related data elements and their content'
-    ref: 'IDT08'
+    ref: 'ITD08'
     req: 'O'
     type: 'AN'
     min: 1
