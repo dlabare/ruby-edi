@@ -2162,6 +2162,7 @@ IT1:
     type: 'AN'
     min: 1
     max: 20
+    alternate: line_item_number
   IT102:
     title: 'Quantity Invoiced'
     description: 'Number of units invoiced'
@@ -2170,6 +2171,7 @@ IT1:
     type: 'R'
     min: 1
     max: 10
+    alternate: quantity
   IT103:
     title: 'Unit or Basis for Measurement Code'
     description: 'Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken'
@@ -2198,6 +2200,7 @@ IT1:
       SH: Sheet
       SO: Spool
       TH: Thousand
+    alternate: unit_of_measure_code
   IT104:
     title: 'Unit Price'
     description: 'Price per unit of product, service, commodity, etc.'
@@ -2206,6 +2209,7 @@ IT1:
     type: 'R'
     min: 1
     max: 17
+    alternate: unit_price
   IT105:
     title: 'Basis of Unit Price Code'
     description: 'Code identifying the type of unit price for an item'
@@ -2223,6 +2227,7 @@ IT1:
       TF: Per 1000 Feet
       TP: Price per Thousand
       UM: Price per Unit of Measure
+    alternate: unit_price_code
   IT106:
     title: 'Product/Service ID Qualifier'
     description: 'Code identifying the type/source of the descriptive number used in Product/Service ID'
@@ -2243,6 +2248,7 @@ IT1:
       UK: U.P.C./EAN Shipping Container Code
       VC: Vendor's (Seller's) Catalog Number
       VP: Vendor's (Seller's) Part Number
+    alternate: part_number_code
   IT107:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2251,6 +2257,7 @@ IT1:
     type: 'AN'
     min: 1
     max: 48
+    alternate: part_number
   IT108:
     title: 'Product/Service ID Qualifier'
     description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
@@ -2271,6 +2278,7 @@ IT1:
       UK: U.P.C./EAN Shipping Container Code
       VC: Vendor's (Seller's) Catalog Number
       VP: Vendor's (Seller's) Part Number
+    alternate: vendor_part_number_code
   IT109:
     title: 'Product/Service ID'
     description: 'Identifying number for a product or service'
@@ -2279,6 +2287,7 @@ IT1:
     type: 'AN'
     min: 1
     max: 48
+    alternate: vendor_part_number
   IT110:
     title: 'Product/Service ID Qualifier'
     description: 'Code identifying the type/source of the descriptive number used in Product/Service ID '
